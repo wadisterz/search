@@ -3,52 +3,16 @@
   <head>
     <meta charset="UTF-8">
     <title>Search Results</title>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-      }
-      h1 {
-        font-size: 24px;
-        font-weight: bold;
-      }
-      h2 {
-        font-size: 18px;
-        font-weight: bold;
-      }
-      a {
-        color: blue;
-        text-decoration: none;
-      }
-      a:hover {
-        text-decoration: underline;
-      }
-      .result {
-        margin-bottom: 20px;
-      }
-      .title {
-        font-size: 18px;
-        font-weight: bold;
-      }
-      .url {
-        font-size: 14px;
-        color: gray;
-      }
-      .snippet {
-        font-size: 16px;
-      }
-      .document {
-        margin-top: 20px;
-        font-size: 16px;
-        line-height: 1.5;
-      }
-    </style>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
   </head>
   <body>
+    <section class="content-section">
+    <div class="content-wrapper">
     <div id="header">
-      <img src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" alt="Google logo">
       <form action="/search" method="get">
+                <div class="search-bar">
         <input type="text" name="query">
-        <input type="submit" value="Search">
+                </div>
       </form>
     </div>
     <div id="search-results">
@@ -56,19 +20,22 @@
       {% if results %}
         {% for result in results %}
           <div class="result">
-            <h2 class="title"><a href="{{ result.url }}">{{ result.title }}</a></h2>
-            <div class="url">{{ result.url }}</div>
-            <div class="document">{{ documents[result[0]] }}</div>
+            <h2 class="title">{{ result.title }}</a></h2>
+            -----------------------------------------------
+            <div class="url"></div>
+            <div class="document"> {{documents[result[0]] }}</a></div>
           </div>
         {% endfor %}
       {% else %}
         <p>No results found.</p>
       {% endif %}
     </div>
-    <div id="footer">
-      <a href="#">Advertising</a>
-      <a href="#">Business</a>
-      <a href="#">About</a>
     </div>
+    <div id="footer">
+      <!-- <a href="#">Advertising</a>
+      <a href="#">Business</a>
+      <a href="#">About</a> -->
+    </div>
+    </section>
   </body>
 </html>

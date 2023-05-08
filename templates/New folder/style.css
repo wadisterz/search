@@ -4,6 +4,16 @@
     box-sizing: border-box;
 }
 
+.title  {
+    color: white;
+    
+}
+
+.document  {
+    color: white;
+}
+
+
 li {
     list-style-type: none;
 }
@@ -15,6 +25,7 @@ a {
 body {
     font-family: sans-serif;
     height: 100vh;
+    background-color: white;
     display: flex;
     flex-direction: column;
 }
@@ -43,7 +54,7 @@ header {
 }
 
 .navbar ul li a {
-    color: black;
+    color: rgb(255, 255, 255);
 }
 
 .link:hover {
@@ -105,8 +116,8 @@ header {
 
 .search-bar {
     border: 1px solid lightgray;
-    width: 600px;
-    height: 45px;
+    width: 800px;
+    height: 85px;
     border-radius: 30px;
     display: flex;
     align-items: center;
@@ -168,7 +179,7 @@ header {
 }
 
 .language p a {
-    color: blue;
+    color: rgb(255, 255, 255);
 }
 
 .language p a:hover {
@@ -231,6 +242,7 @@ footer {
 
 /* Mobile and Tablet */
 @media only screen and (max-width: 650px) {
+
     /* Navbar */
     .navbar ul {
         font-size: 10px;
@@ -270,7 +282,7 @@ footer {
     .google-search-btn {
         width: 100px;
     }
-    
+
     .lucky-search-btn {
         width: 120px;
     }
